@@ -1,0 +1,42 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <template if:false={isGuest}>
+      <template if:true={showLogo}>
+          <c-self-navigation-logo formfactor="desktop"></c-self-navigation-logo>
+      </template>
+      <template if:false={showLogo}>
+          <a  href={href}
+              onclick={handleHamburgerMenuToggle}><img class="hamburger-menu-icon" src={hamburgerIcon}/>
+          </a>
+      </template>
+      <lightning-vertical-navigation onselect={handleSelect}>
+          <lightning-vertical-navigation-section label={clientName}>
+              <lightning-vertical-navigation-item-icon
+                  label="Audit Services"
+                  name="auditservices"
+                  icon-name="utility:asset_audit">
+              </lightning-vertical-navigation-item-icon>
+              <lightning-vertical-navigation-item-icon
+                  label="Help & Learning"
+                  name="help&learning"
+                  icon-name="utility:help">
+              </lightning-vertical-navigation-item-icon>
+              <lightning-vertical-navigation-item-icon
+                  label="About Us"
+                  name="aboutus"
+                  icon-name="utility:people">
+              </lightning-vertical-navigation-item-icon>
+              <lightning-vertical-navigation-item-icon
+                  label="Update Profile"
+                  name="updateprofile"
+                  icon-name="utility:settings">
+              </lightning-vertical-navigation-item-icon>
+              <lightning-vertical-navigation-item-icon
+                  label="Log Out"
+                  name="logout"
+                  icon-name="utility:logout">
+              </lightning-vertical-navigation-item-icon>
+          </lightning-vertical-navigation-section>
+      </lightning-vertical-navigation>
+    </template>
+</template>
